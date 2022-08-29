@@ -11,7 +11,7 @@ export default function UserList() {
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
-  
+
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
@@ -20,8 +20,8 @@ export default function UserList() {
       width: 200,
       renderCell: (params) => {
         return (
-          <div className="userListUser">
-            <img className="userListImg" src={params.row.avatar} alt="" />
+          <div className='userListUser'>
+            <img className='userListImg' src={params.row.avatar} alt='' />
             {params.row.username}
           </div>
         );
@@ -46,10 +46,10 @@ export default function UserList() {
         return (
           <>
             <Link to={"/user/" + params.row.id}>
-              <button className="userListEdit">Edit</button>
+              <button className='userListEdit'>Edit</button>
             </Link>
             <DeleteOutline
-              className="userListDelete"
+              className='userListDelete'
               onClick={() => handleDelete(params.row.id)}
             />
           </>
@@ -59,7 +59,7 @@ export default function UserList() {
   ];
 
   return (
-    <div className="userList">
+    <div className='userList'>
       <DataGrid
         rows={data}
         disableSelectionOnClick
